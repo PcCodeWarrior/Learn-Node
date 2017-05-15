@@ -7,3 +7,4 @@ router.get('/', storeController.homePage);
 
 
 module.exports = router;
+
