@@ -20,7 +20,6 @@ storeSchema.pre('save',function(next){
 if (!this.isModified('name')){
     next();
     return;
-}
     this.slug=slug(this.name);
     next();
 });
