@@ -2,5 +2,4 @@
 .gitignore
 .idea/
 dang-thats-delicious/variables.env
-variables.env
-/stepped-solutions/
+stepped-solutions/
