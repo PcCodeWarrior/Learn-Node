@@ -9,6 +9,7 @@ exports.addStore = (req, res)=>{
   res.render('editStore', {title: 'Add Store'})
 };
 
+
 exports.createStore = async (req, res)=>{
   const store = await(new Store(req.body)).save();
   await store.save();
