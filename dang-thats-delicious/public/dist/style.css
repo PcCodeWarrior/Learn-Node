@@ -488,7 +488,7 @@ p {
         transform: skew(-5deg); }
   .title a {
     border-bottom: 0;
-    background-image: linear-gradient(to right, rgba(255, 196, 14, 0.8) 100%, rgba(255, 196, 14, 0.8) 50%); }
+    background-image: linear-gradient(to right, rgba(247, 245, 9, 0.8) 100%, rgba(208, 206, 18, 0.8) 50%); }
 
 .title--single {
   max-width: 600px;

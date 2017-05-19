@@ -13,15 +13,17 @@ const storeSchema = new mongoose.Schema({
       type: String,
       trim: true
   },
-  tag: [String]
+  tags: [String]
 });
 
 storeSchema.pre('save',function(next){
-if (!this.isModified('name')){
+  if (!this.isModified('name')){
     next();
-    return;}
-    this.slug=slug(this.name);
-    next();
+    return;
+  }
+
+  this.slug=slug(this.name);next();
+  next();
 });
 module.exports= mongoose.model('Store', storeSchema);
 
