@@ -19,7 +19,7 @@ router.post('/add/:id',
 );
 
 
-
+router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 
 router.get('/stores/:id/edit',catchErrors(storeController.editStore));
 module.exports = router;
