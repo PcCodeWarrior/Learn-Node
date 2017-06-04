@@ -7,7 +7,7 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
-    email:{
+    email: {
         type: String,
         unique: true,
         lowercase: true,
@@ -15,20 +15,20 @@ const userSchema = new Schema({
         validate: [validator.isEmail, 'Invalid Email Address'],
         required: 'Please Supply an email address'
     },
-    name:{
+    name: {
         type: String,
-        required: 'Please Supply a name',
+        required: 'Please supply a name',
         trim: true
     }
 });
 
-userSchema.virtual('gravatar').get(function(){
+userSchema.virtual('gravatar').get(function() {
     const hash = md5(this.email);
-  return `https://gravatar.com/avatar/${hash}?s=200}`;
+    return `https://gravatar.com/avatar/${hash}?s=200`;
 });
 
-userSchema.plugin(passportLocalMongoose, {usernameField: 'email'});
+userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 userSchema.plugin(mongodbErrorHandler);
-module.exports = mongoose.model('User', userSchema);
 
+module.exports = mongoose.model('User', userSchema);
 
