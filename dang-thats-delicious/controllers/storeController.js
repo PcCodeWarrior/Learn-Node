@@ -104,3 +104,10 @@ exports.getStoresByTag = async (req, res) => {
 
   res.render('tag', { tags, title: 'Tags', tag, stores });
 };
+
+exports.searchStores = async (req, res) =>{
+   const stores = await Store.find({$text:{ $search: req.query.q}}, {score: { $meta: 'textScore'}})
+                 .sort({ score: { $meta: 'textScore'}}).limit(2);
+
+   res.json(stores);
+};
